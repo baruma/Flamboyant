@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91FD237A390C959EE82F3641 /* Pods_Flamboyant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95064F7165FBAE76694BFC8E /* Pods_Flamboyant.framework */; };
+		9617692D220AE02300B1806F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617692C220AE02300B1806F /* DatabaseManager.swift */; };
 		968EBFBF2203C9BD00607074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EBFBE2203C9BD00607074 /* AppDelegate.swift */; };
 		968EBFC12203C9BD00607074 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EBFC02203C9BD00607074 /* ListViewController.swift */; };
 		968EBFC42203C9BD00607074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968EBFC22203C9BD00607074 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		56906122EBAD9E3FCACF4D8C /* Pods-Flamboyant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamboyant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flamboyant/Pods-Flamboyant.release.xcconfig"; sourceTree = "<group>"; };
 		95064F7165FBAE76694BFC8E /* Pods_Flamboyant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamboyant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9617692C220AE02300B1806F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		968EBFBB2203C9BD00607074 /* Flamboyant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flamboyant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		968EBFBE2203C9BD00607074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		968EBFC02203C9BD00607074 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				968EBFEB2206793F00607074 /* Note.swift */,
 				968EC01722091CE300607074 /* RealmNote.swift */,
+				9617692C220AE02300B1806F /* DatabaseManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				968EBFE9220678D000607074 /* CompositionViewController.swift in Sources */,
 				968EBFBF2203C9BD00607074 /* AppDelegate.swift in Sources */,
 				968EBFD32203CC6900607074 /* ListViewController+Datasource.swift in Sources */,
+				9617692D220AE02300B1806F /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
