@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		91FD237A390C959EE82F3641 /* Pods_Flamboyant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95064F7165FBAE76694BFC8E /* Pods_Flamboyant.framework */; };
 		9617692D220AE02300B1806F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617692C220AE02300B1806F /* DatabaseManager.swift */; };
+		968A9E402211FB8C0099236E /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A9E3F2211FB8C0099236E /* Datasource.swift */; };
+		968A9E42221328170099236E /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A9E41221328170099236E /* NoteManager.swift */; };
+		968A9E4622132E610099236E /* Writable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A9E4522132E610099236E /* Writable.swift */; };
+		968A9E4822132E6A0099236E /* Deletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A9E4722132E6A0099236E /* Deletable.swift */; };
 		968EBFBF2203C9BD00607074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EBFBE2203C9BD00607074 /* AppDelegate.swift */; };
 		968EBFC12203C9BD00607074 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EBFC02203C9BD00607074 /* ListViewController.swift */; };
 		968EBFC42203C9BD00607074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968EBFC22203C9BD00607074 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 		56906122EBAD9E3FCACF4D8C /* Pods-Flamboyant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamboyant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flamboyant/Pods-Flamboyant.release.xcconfig"; sourceTree = "<group>"; };
 		95064F7165FBAE76694BFC8E /* Pods_Flamboyant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamboyant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9617692C220AE02300B1806F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		968A9E3F2211FB8C0099236E /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
+		968A9E41221328170099236E /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		968A9E4522132E610099236E /* Writable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writable.swift; sourceTree = "<group>"; };
+		968A9E4722132E6A0099236E /* Deletable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deletable.swift; sourceTree = "<group>"; };
 		968EBFBB2203C9BD00607074 /* Flamboyant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flamboyant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		968EBFBE2203C9BD00607074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		968EBFC02203C9BD00607074 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +107,8 @@
 		968EBFD42203CD1100607074 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				968EBFE62206789F00607074 /* Composition Screen */,
 				968EBFD52203CD1500607074 /* List View Screen */,
+				968EBFE62206789F00607074 /* Composition Screen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -109,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				968EBFEA2206793000607074 /* Models */,
-				968EBFD72203CD2500607074 /* Views */,
 				968EBFD62203CD2000607074 /* Controllers */,
 				968EBFD82203D05600607074 /* Custom Note Cell */,
 			);
@@ -124,13 +131,6 @@
 				968EBFD02203CC3B00607074 /* ListViewController+Delegate.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		968EBFD72203CD2500607074 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		968EBFD82203D05600607074 /* Custom Note Cell */ = {
@@ -164,6 +164,10 @@
 				968EBFEB2206793F00607074 /* Note.swift */,
 				968EC01722091CE300607074 /* RealmNote.swift */,
 				9617692C220AE02300B1806F /* DatabaseManager.swift */,
+				968A9E3F2211FB8C0099236E /* Datasource.swift */,
+				968A9E41221328170099236E /* NoteManager.swift */,
+				968A9E4522132E610099236E /* Writable.swift */,
+				968A9E4722132E6A0099236E /* Deletable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,11 +259,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flamboyant/Pods-Flamboyant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/gooey-cell/gooey_cell.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/gooey_cell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -293,9 +301,13 @@
 			files = (
 				968EBFD12203CC3B00607074 /* ListViewController+Delegate.swift in Sources */,
 				968EC01822091CE300607074 /* RealmNote.swift in Sources */,
+				968A9E402211FB8C0099236E /* Datasource.swift in Sources */,
+				968A9E4622132E610099236E /* Writable.swift in Sources */,
 				968EBFC12203C9BD00607074 /* ListViewController.swift in Sources */,
+				968A9E42221328170099236E /* NoteManager.swift in Sources */,
 				968EBFEC2206793F00607074 /* Note.swift in Sources */,
 				968EBFE32205444100607074 /* NoteCell.swift in Sources */,
+				968A9E4822132E6A0099236E /* Deletable.swift in Sources */,
 				968EBFE9220678D000607074 /* CompositionViewController.swift in Sources */,
 				968EBFBF2203C9BD00607074 /* AppDelegate.swift in Sources */,
 				968EBFD32203CC6900607074 /* ListViewController+Datasource.swift in Sources */,

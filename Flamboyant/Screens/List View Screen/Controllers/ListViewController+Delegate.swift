@@ -14,4 +14,9 @@ extension ListViewController: UITableViewDelegate {
         return 55
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toCompositionVC", sender: self)
+        
+    }
 }

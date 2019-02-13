@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-
+    let databaseManager = DatabaseManager()
+    
+    var notes: [Note] {
+        return self.databaseManager.notes
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -20,12 +26,10 @@ class ListViewController: UIViewController {
         self.registerCustomNoteCell()
     }
     
-    
-
     func registerCustomNoteCell() {
         let cellNib = UINib(nibName: "NoteCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "NoteCell")
     }
+    
 
 }
-

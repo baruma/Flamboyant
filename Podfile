@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '9.3'
 
 target 'Flamboyant' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,5 +7,6 @@ target 'Flamboyant' do
   # Pods for Flamboyant
 
 pod 'RealmSwift'
+pod 'gooey-cell'
 
 end

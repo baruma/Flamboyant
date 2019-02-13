@@ -11,11 +11,12 @@ import UIKit
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell") as! NoteCell
+        cell.note = self.notes[indexPath.row]
         return cell
     }
 }

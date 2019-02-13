@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k4M-Wv-ISR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k4M-Wv-ISR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="0.97999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bo6-2Y-dlq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="bo6-2Y-dlq">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bo6-2Y-dlq" id="S0Z-Po-Qvg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -45,7 +45,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="XLb-4m-xt8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="diu-qH-tgl" kind="show" id="uLt-8V-uFk"/>
+                                <segue destination="diu-qH-tgl" kind="show" identifier="toCompositionVC" id="uLt-8V-uFk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -64,13 +64,38 @@
                     <view key="view" contentMode="scaleToFill" id="Bqv-Sn-rfI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D5k-zP-i2c">
+                                <rect key="frame" x="10" y="116" width="355" height="551"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vg8-mf-piS">
+                                <rect key="frame" x="319" y="33" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="D5k-zP-i2c" firstAttribute="leading" secondItem="Ofm-EN-QXP" secondAttribute="leading" constant="10" id="D2q-Rl-rd0"/>
+                            <constraint firstItem="D5k-zP-i2c" firstAttribute="trailing" secondItem="Ofm-EN-QXP" secondAttribute="trailing" constant="-10" id="dhU-rD-9vr"/>
+                            <constraint firstItem="D5k-zP-i2c" firstAttribute="top" secondItem="Ofm-EN-QXP" secondAttribute="top" id="dsU-lI-PuA"/>
+                            <constraint firstItem="D5k-zP-i2c" firstAttribute="bottom" secondItem="Ofm-EN-QXP" secondAttribute="bottom" id="sV9-xn-VOt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ofm-EN-QXP"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="D5k-zP-i2c" id="4Sd-Kz-Zwo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejm-vk-d0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="133"/>
+            <point key="canvasLocation" x="1813.5999999999999" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yDu-hh-VSo">

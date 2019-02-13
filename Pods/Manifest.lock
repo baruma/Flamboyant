@@ -1,4 +1,7 @@
 PODS:
+  - gooey-cell (0.1.0):
+    - pop (~> 1.0)
+  - pop (1.0.12)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
   - Realm/Headers (3.13.1)
@@ -6,17 +9,22 @@ PODS:
     - Realm (= 3.13.1)
 
 DEPENDENCIES:
+  - gooey-cell
   - RealmSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - gooey-cell
+    - pop
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  gooey-cell: ed8d8fa67b57dfca89e655faf8c30ac5fd71c46d
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
 
-PODFILE CHECKSUM: e83eae3b107a197880df844b6eb7996f28eb5ec6
+PODFILE CHECKSUM: 7962f021c9366508c93c51b13ca01f7ef4a3033e
 
 COCOAPODS: 1.5.3
