@@ -13,6 +13,7 @@ class NoteCell: UITableViewCell {
     
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var lastEditedLabel: UILabel!
+    
     let compositionVC = CompositionViewController()
     static let identifier = "NoteCell"
 
@@ -27,8 +28,9 @@ class NoteCell: UITableViewCell {
             guard let note = note else {
                 return
             }
-            noteTitleLabel.text = compositionVC.textView.text
-            lastEditedLabel.text = "uhhhhh"
+            self.noteTitleLabel.text = String(note.noteContent)
+           // self.lastEditedLabel.text = Date(note.lastEdited)
+        // noteTitleLabel.text = compositionVC.textView.text
         }
     }
 

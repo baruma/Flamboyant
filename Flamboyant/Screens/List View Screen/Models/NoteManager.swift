@@ -12,11 +12,11 @@ class NoteManager: Writable, Deletable {
 
     func write(dataSource: Datasource, note: Note) {
         note.lastEdited = Date()
-        dataSource.write(object: self)
+        dataSource.write(object: note)
     }
     
     func delete(dataSource: Datasource, note: Note) {
-        dataSource.delete(object: self)
+        dataSource.delete(object: note)
     }
     
 }

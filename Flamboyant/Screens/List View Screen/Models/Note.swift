@@ -9,6 +9,7 @@
 import Foundation
 
 class Note {
+    
     var id: String
     var noteContent: String
     var lastEdited: Date

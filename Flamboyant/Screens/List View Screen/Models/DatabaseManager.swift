@@ -46,10 +46,7 @@ class DatabaseManager: Datasource {
             self.realm.delete(realmNote)
             try? self.realm.commitWrite()
         }
-        
     }
-    
-
 }
 
 
