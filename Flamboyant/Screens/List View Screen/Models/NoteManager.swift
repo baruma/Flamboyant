@@ -9,13 +9,14 @@
 import Foundation
 
 class NoteManager: Writable, Deletable {
+
     func write(dataSource: Datasource, note: Note) {
         note.lastEdited = Date()
-        dataSource.write(object: note)
+        dataSource.write(object: self)
     }
     
     func delete(dataSource: Datasource, note: Note) {
-        dataSource.delete(object: note)
+        dataSource.delete(object: self)
     }
     
 }

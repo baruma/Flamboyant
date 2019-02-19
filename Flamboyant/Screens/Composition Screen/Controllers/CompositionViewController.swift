@@ -9,13 +9,21 @@
 import UIKit
 import RealmSwift
 
-class CompositionViewController: UIViewController {    
+class CompositionViewController: UIViewController {
+    
+    var note: Note? = nil
+    let noteManager = NoteManager()
+    let databasemanager = DatabaseManager()
     
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.noteManager.write(dataSource: self.databasemanager, note: self.note)
     }
     
 }
