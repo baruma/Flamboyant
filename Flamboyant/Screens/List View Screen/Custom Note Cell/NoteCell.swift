@@ -13,8 +13,6 @@ class NoteCell: UITableViewCell {
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var lastEditedLabel: UILabel!
     
-   //  let compositionVC = CompositionViewController()
-    var date = Date()
     var formatter = DateFormatter()
     static let identifier = "NoteCell"
 
@@ -30,7 +28,7 @@ class NoteCell: UITableViewCell {
                 return
             }
             self.noteTitleLabel.text = String(note.noteContent)
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
 
             self.lastEditedLabel.text = String(formatter.string(from: note.lastEdited))
         }

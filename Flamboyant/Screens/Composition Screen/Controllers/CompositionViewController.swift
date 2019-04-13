@@ -27,7 +27,7 @@ class CompositionViewController: UIViewController {
         if note.noteContent.isEmpty {
             return
         }
-        
+        note.lastEdited = Date()
         let databaseManager = self.databaseManager ?? DatabaseManager()
         self.noteManager.write(dataSource: databaseManager, note: note)
     }
