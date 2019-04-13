@@ -11,7 +11,7 @@ import Foundation
 class Note {
     
     var id: String
-    var noteContent: String
+    var noteContent: String 
     var lastEdited: Date
     
     init(noteContent: String, id: String = UUID().uuidString, lastEdited: Date = Date()) {

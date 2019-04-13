@@ -40,11 +40,11 @@ class DatabaseManager: Datasource {
         guard let note = object as? Note else {
             return
         }
-
+        
         if let realmNote = self.realm.object(ofType: RealmNote.self, forPrimaryKey: note.id) {
-            self.realm.beginWrite()
-            self.realm.delete(realmNote)
-            try? self.realm.commitWrite()
+            try! realm.write {
+                realm.delete(realmNote)
+            }
         }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 import UIKit
 
 extension ListViewController: UITableViewDelegate {
@@ -16,7 +17,17 @@ extension ListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toCompositionVC", sender: self)
+     //   let compositionVC = CompositionViewController(coder: self.databaseManager)
+       // compositionVC.note = self.notes[indexPath.row]
+    
+       let indexPathNote = loadNote(index: indexPath)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier : Constants.compositionViewControllerID) as! CompositionViewController
+        controller.databaseManager = databaseManager
+        controller.note = indexPathNote
+        self.show(controller, sender: true)
         
     }
+    
 }

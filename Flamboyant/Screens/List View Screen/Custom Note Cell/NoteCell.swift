@@ -7,14 +7,15 @@
 //
 
 import UIKit
-import gooey_cell
 
 class NoteCell: UITableViewCell {
     
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var lastEditedLabel: UILabel!
     
-    let compositionVC = CompositionViewController()
+   //  let compositionVC = CompositionViewController()
+    var date = Date()
+    var formatter = DateFormatter()
     static let identifier = "NoteCell"
 
     override func awakeFromNib() {
@@ -29,14 +30,14 @@ class NoteCell: UITableViewCell {
                 return
             }
             self.noteTitleLabel.text = String(note.noteContent)
-           // self.lastEditedLabel.text = Date(note.lastEdited)
-        // noteTitleLabel.text = compositionVC.textView.text
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+
+            self.lastEditedLabel.text = String(formatter.string(from: note.lastEdited))
         }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
 }

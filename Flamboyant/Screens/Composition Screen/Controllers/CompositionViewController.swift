@@ -10,33 +10,35 @@ import UIKit
 import RealmSwift
 
 class CompositionViewController: UIViewController {
-    
-    var note: Note?
+
     let noteManager = NoteManager()
-    let databasemanager = DatabaseManager()
-    
+    var databaseManager: DatabaseManager?
+    var note: Note?
+
     @IBOutlet weak var textView: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // See if you can remove this code at some point.
-        if self.note == nil {
-            self.note = Note(noteContent: "")
-        }
+
+        textView.text = note?.noteContent
     }
+    
+    func saveNote(note: Note) {
+        if note.noteContent.isEmpty {
+            return
+        }
+        
+        let databaseManager = self.databaseManager ?? DatabaseManager()
+        self.noteManager.write(dataSource: databaseManager, note: note)
+    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
-
-        if let note = note {  // this will only hit if ther eis a value prevalent in your note.  If there is no value, it will never hit.
-            note.noteContent = self.textView.text
-            self.noteManager.write(dataSource: self.databasemanager, note: self.note!)  // see how you can avoid force-unwrapping
-        }
-        else {
-            print("Fail Whale")
-            print(Error.self)
-        }
+        let note = self.note ?? Note(noteContent: self.textView.text)
+        saveNote(note: note)
+        // add super????
     }
-    
+
+
 }
 
