@@ -18,13 +18,14 @@ class ListViewController: UIViewController {
     var notes: [Note] {
         return self.databaseManager.notes
     }
-    
+
     var note: Note?
     let noteManager = NoteManager()
     var compositionVC = CompositionViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         navigationController?.navigationBar.shadowImage = UIImage()

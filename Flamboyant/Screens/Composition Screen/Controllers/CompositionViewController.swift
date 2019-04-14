@@ -35,8 +35,8 @@ class CompositionViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         let note = self.note ?? Note(noteContent: self.textView.text)
+        note.noteContent = self.textView.text
         saveNote(note: note)
-        // add super????
     }
 
 
