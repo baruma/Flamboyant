@@ -17,9 +17,6 @@ extension ListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     //   let compositionVC = CompositionViewController(coder: self.databaseManager)
-       // compositionVC.note = self.notes[indexPath.row]
-    
        let indexPathNote = loadNote(index: indexPath)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

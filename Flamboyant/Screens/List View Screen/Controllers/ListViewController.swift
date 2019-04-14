@@ -19,7 +19,6 @@ class ListViewController: UIViewController {
         return self.databaseManager.notes
     }
     
-    // NEW CODE
     var note: Note?
     let noteManager = NoteManager()
     var compositionVC = CompositionViewController()
@@ -31,8 +30,6 @@ class ListViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         self.registerCustomNoteCell()
         
-   //     print(Realm.Configuration.defaultConfiguration.fileURL!)
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
